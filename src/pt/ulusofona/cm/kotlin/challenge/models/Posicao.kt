@@ -7,8 +7,11 @@ class Posicao (private var _x: Int = 0, private var _y: Int = 0){
         this._y = y
     }
 
-    val x get() = _x
-    val y get() = _y
+    var x get() = _x
+        set(value) {this._x = value}
+
+    var y get() = _y
+        set(value) {this._y = value}
 
 
     override fun toString(): String {

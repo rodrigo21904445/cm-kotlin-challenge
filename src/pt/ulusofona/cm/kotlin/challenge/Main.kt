@@ -12,5 +12,6 @@ fun main() {
     val dataDeNascimento = LocalDate.parse(text, formatter)
 
     val pessoa: Pessoa = Pessoa("Rodrigo", Date.from(dataDeNascimento.atStartOfDay(ZoneId.systemDefault()).toInstant()))
-    pessoa.tirarCarta()
+    //pessoa.tirarCarta()
+    print(pessoa)
 }

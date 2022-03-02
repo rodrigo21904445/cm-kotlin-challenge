@@ -10,8 +10,9 @@ import java.time.Period
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Pessoa (private val nome: String, private val dataDeNascimento: Date){
+class Pessoa (val nome: String, val dataDeNascimento: Date): Movimentavel {
 
     var _veiculos = mutableListOf<Veiculo>()
         //set(value) = this.veiculos = value
@@ -24,6 +25,16 @@ class Pessoa (private val nome: String, private val dataDeNascimento: Date){
         val separator: String = " | "
         return "Pessoa".plus(separator).plus(nome).plus(separator).plus(dataDeNascimento).plus(separator)
             .plus(posicao)
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+
+        if(posicao.x == x && posicao.y == y) {
+            throw AlterarPosicaoException()
+        }
+
+        posicao.x = x
+        posicao.y = y
     }
 
     fun comprarVeiculo(veiculo: Veiculo) {
@@ -96,4 +107,5 @@ class Pessoa (private val nome: String, private val dataDeNascimento: Date){
 
         return yearDiff
     }
+
 }
