@@ -19,6 +19,10 @@ class Carro (private val _identificador: String, private val _motor: Motor): Vei
             .plus(posicao).plus(separator).plus(posicao)
     }
 
+    override fun requerCarta(): Boolean {
+        return false
+    }
+
     override fun moverPara(x: Int, y: Int) {
 
         if(posicao.x == x && posicao.y == y) {

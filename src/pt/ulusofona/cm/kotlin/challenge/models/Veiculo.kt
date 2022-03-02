@@ -9,7 +9,7 @@ import java.util.*
 open class Veiculo (private val _identificador: String): Movimentavel {
 
     private var _posicao: Posicao = Posicao()
-    private var _dataDeAquisicao: Date? = null
+    private var _dataDeAquisicao: Date = Date()
 
     open val identificador get() = _identificador
 
@@ -23,7 +23,7 @@ open class Veiculo (private val _identificador: String): Movimentavel {
         return "Veiculo".plus(separator).plus(_identificador)
     }
 
-    fun requerCarta(): Boolean {
+    open fun requerCarta(): Boolean {
         return false
     }
 
