@@ -20,7 +20,7 @@ data class Carro (private val _identificador: String, private val _motor: Motor)
     }
 
     override fun requerCarta(): Boolean {
-        return false
+        return true
     }
 
     override fun moverPara(x: Int, y: Int) {
