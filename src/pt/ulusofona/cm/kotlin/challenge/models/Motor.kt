@@ -4,7 +4,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoDesligadoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 
-class Motor (private val _cavalos: Int, private val _cilindrada: Int): Ligavel {
+data class Motor (private val _cavalos: Int, private val _cilindrada: Int): Ligavel {
     private var _ligado: Boolean = false
         var ligado get() = _ligado
         set(value) {this._ligado = value}

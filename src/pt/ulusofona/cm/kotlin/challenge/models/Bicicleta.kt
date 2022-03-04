@@ -4,7 +4,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Bicicleta (private val _identificador: String): Veiculo(_identificador), Movimentavel{
+data class Bicicleta (private val _identificador: String): Veiculo(_identificador), Movimentavel{
 
     override val identificador get() = _identificador
 

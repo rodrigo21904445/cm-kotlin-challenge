@@ -12,7 +12,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Pessoa (val nome: String, val dataDeNascimento: Date): Movimentavel {
+data class Pessoa (val nome: String, val dataDeNascimento: Date): Movimentavel {
 
     var _veiculos = mutableListOf<Veiculo>()
         //set(value) = this.veiculos = value

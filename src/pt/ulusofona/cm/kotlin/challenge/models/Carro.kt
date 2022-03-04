@@ -6,7 +6,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Carro (private val _identificador: String, private val _motor: Motor): Veiculo(_identificador), Movimentavel,
+data class Carro (private val _identificador: String, private val _motor: Motor): Veiculo(_identificador), Movimentavel,
     Ligavel {
     override val identificador get() = _identificador
     private val motor get() = _motor
