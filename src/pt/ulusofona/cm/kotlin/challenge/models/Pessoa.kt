@@ -65,12 +65,12 @@ data class Pessoa (val nome: String, val dataDeNascimento: Date): Movimentavel {
 
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
 
-        if(!temCarta()) {
-            throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
-        }
-
         for(v in _veiculos) {
             if(v.identificador == identificador) {
+
+                if(!temCarta() && v is Carro) {
+                    throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
+                }
 
                 if(v.posicao.x == x && v.posicao.y == y) {
                     throw AlterarPosicaoException()
