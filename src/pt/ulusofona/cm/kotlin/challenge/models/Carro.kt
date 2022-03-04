@@ -14,7 +14,7 @@ data class Carro (private val _identificador: String, private val _motor: Motor)
     override fun toString(): String {
         val separator: String = " | "
         val dataDeAquisicao = super.dataDeAquisicao
-        val posicao = super.posicao
+        val posicao = Posicao()
         return "Carro".plus(separator).plus(_identificador).plus(separator).plus(dataDeAquisicao).plus(separator)
             .plus(posicao).plus(separator).plus(posicao)
     }

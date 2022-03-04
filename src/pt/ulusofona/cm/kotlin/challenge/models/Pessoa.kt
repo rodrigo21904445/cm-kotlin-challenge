@@ -66,7 +66,7 @@ data class Pessoa (val nome: String, val dataDeNascimento: Date): Movimentavel {
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
 
         if(!temCarta()) {
-            throw PessoaSemCartaException()
+            throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
         }
 
         for(v in _veiculos) {
